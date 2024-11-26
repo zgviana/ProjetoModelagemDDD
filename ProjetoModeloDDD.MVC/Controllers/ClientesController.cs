@@ -110,26 +110,27 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         // GET: ClientesController/Delete/5
         public ActionResult Delete(int id)
-        {            
-            Cliente c = new Cliente();
+        {
+            /*Cliente c = new Cliente();
             c = _clienteApp.GetById(id);
             _clienteApp.Remove(c);
-            return RedirectToAction("Index");          
+            return RedirectToAction("Index");   */
+            Mapper mapper = new Mapper(configClienteToClienteViewModel);
+            var cliente = _clienteApp.GetById(id);
+            var clienteViewModel = mapper.Map<Cliente, ClienteViewModel>(cliente);           
+
+            return View(clienteViewModel);
         }
 
-        // POST: ClientesController/Delete/5
-        [HttpPost,ActionName("Delete")]
+        // POST: Clientes/Delete/5
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var cliente = _clienteApp.GetById(id);
+            _clienteApp.Remove(cliente);
+
+            return RedirectToAction("Index");
         }
     }
 }
