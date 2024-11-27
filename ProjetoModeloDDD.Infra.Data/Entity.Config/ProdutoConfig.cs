@@ -21,9 +21,9 @@ namespace ProjetoModeloDDD.Infra.Data.Entity.Config
                 .IsRequired();
 
 
-            HasRequired(p => p.Cliente)
+            /*HasRequired(p => p.Cliente)
                 .WithMany()
-                .HasForeignKey(c => c.ClienteId);
+                .HasForeignKey(c => c.ClienteId);*/
 
         }
     }

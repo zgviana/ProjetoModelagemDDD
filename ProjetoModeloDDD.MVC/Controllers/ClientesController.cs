@@ -100,7 +100,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     _clienteApp.Update(clienteDomain);
                     return RedirectToAction("Index");
                 }
-                return View(cliente);
+                return View(cliente); 
             }
             catch
             {
