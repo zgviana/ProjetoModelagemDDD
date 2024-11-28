@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace ProjetoModeloDDD.Domain.Entities
 {
     public class Produto
@@ -11,7 +8,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public decimal Valor { get; set; }
         public bool Disponivel { get;set; }
         public int ClienteId { get; set; }
-        //public virtual Cliente Cliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
 
     }
 }

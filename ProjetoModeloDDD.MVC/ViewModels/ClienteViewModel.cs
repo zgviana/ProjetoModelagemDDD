@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ProjetoModeloDDD.Domain.Entities;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoModeloDDD.MVC.ViewModels
@@ -29,6 +30,6 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public bool Ativo { get; set; }
 
         //[ScaffoldColumn(false)]
-        //public virtual IEnumerable<ProdutoViewModel> Produtos { get; set; }
+        public virtual IEnumerable<Produto>? Produtos { get; set; }
     }
 }

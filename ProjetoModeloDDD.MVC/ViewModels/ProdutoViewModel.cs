@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using ProjetoModeloDDD.Domain.Entities;
 
 namespace ProjetoModeloDDD.MVC.ViewModels
 {
@@ -22,6 +23,6 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public bool Disponivel { get; set; }
         public int ClienteId { get; set; }
 
-        //public virtual ClienteViewModel Cliente { get; set; }
+        public virtual Cliente? Cliente { get; set; }
     }
 }
