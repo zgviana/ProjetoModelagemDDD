@@ -9,9 +9,6 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<p>
-	<a asp-action="Especiais">Clientes Especiais</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -50,7 +47,7 @@
                 @Html.DisplayFor(modelItem => item.Disponivel)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new {  id=item.ProdutoId }) |
